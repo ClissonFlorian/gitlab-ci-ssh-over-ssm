@@ -1,0 +1,12 @@
+---
+- name: Perform Common Tasks
+  block:
+    - name: Populate service facts
+      service_facts:
+
+    - name: Update all packages to the latest version
+      command: yum update -y
+      register: result
+      retries: 1
+      until: result is success
+      tags: packages

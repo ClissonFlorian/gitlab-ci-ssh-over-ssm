@@ -1,0 +1,7 @@
+---
+- hosts:
+    - gitlab_node_type_gitlab_rails
+  roles:
+    - mount-ebs
+    - demo
+  become: yes

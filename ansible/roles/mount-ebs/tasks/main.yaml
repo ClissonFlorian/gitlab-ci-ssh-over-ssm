@@ -1,0 +1,18 @@
+- name: create mount point
+  file:
+    state: directory
+    path: "/mnt/data"
+    mode: "777"
+
+# Assume the additional volume is always nvme1n1
+- name: format the volume
+  filesystem:
+    dev: "/dev/nvme1n1"
+    fstype: "xfs"
+
+- name: mounting the filesystem
+  mount:
+    name: "/mnt/data"
+    src: "/dev/nvme1n1"
+    fstype: "xfs"
+    state: mounted

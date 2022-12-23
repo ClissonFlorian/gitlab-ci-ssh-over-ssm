@@ -1,0 +1,7 @@
+omnibus_node: true
+gitlab_repo_script_url: "https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh"
+gitlab_repo_package: "gitlab-ce"
+gitlab_package: "gitlab-ce"
+external_url_sanitised: "{{ external_url | regex_replace('\\/$', '') }}"
+cloud_provider: "aws"
+ldap_port: 3268
